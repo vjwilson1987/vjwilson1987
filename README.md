@@ -6,10 +6,10 @@
 
 ```mermaid
 flowchart LR
-    agent["Agent on each host<br/><small>packages, files, malware</small>"]
-    feeds["Vendor advisories<br/><small>Ubuntu · Debian · RHEL · AL</small>"]
-    server["<b>DeaconGuard server</b><br/><small>matches + scores</small>"]
-    dashboard["Dashboard<br/><small>findings per host</small>"]
+    agent["Agent on each host<br/>packages, files, malware"]
+    feeds["Vendor advisories<br/>Ubuntu, Debian, RHEL, Amazon Linux"]
+    server["<b>DeaconGuard server</b><br/>matches and scores"]
+    dashboard["Dashboard<br/>findings per host"]
     agent -- enrollment token --> server
     feeds --> server
     server --> dashboard
