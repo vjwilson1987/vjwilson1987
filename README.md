@@ -1,27 +1,28 @@
-<img src="assets/header.svg" alt="Vipin John Wilson, Linux and cloud infrastructure engineer, Stockholm, building DeaconGuard" width="100%">
+`$ kubectl get engineer vipin-john-wilson -o yaml`
 
-#### What I'm building
-
-**[DeaconGuard](https://github.com/Cloudopsshell/deaconguard)** is a Linux security scanner with a central server and enrollment-token agents. It checks packages against the official Ubuntu, Debian, RHEL and Amazon Linux advisories and covers file integrity, security configuration and malware (ClamAV, plus optional YARA-X rules). [deaconguard.io](https://deaconguard.io)
-
-```mermaid
-flowchart LR
-    agent["Agent on each host<br/>packages, files, malware"]
-    feeds["Vendor advisories<br/>Ubuntu, Debian, RHEL, Amazon Linux"]
-    server["<b>DeaconGuard server</b><br/>matches and scores"]
-    dashboard["Dashboard<br/>findings per host"]
-    agent -- enrollment token --> server
-    feeds --> server
-    server --> dashboard
+```yaml
+apiVersion: people.cloudopsshell.com/v1
+kind: Engineer
+metadata:
+  name: vipin-john-wilson
+  namespace: stockholm
+  labels:
+    role: linux-cloud-infrastructure
+spec:
+  building:
+    - name: deaconguard
+      description: Linux security scanner with a server and enrollment-token agents
+      advisories: [ubuntu, debian, rhel, amazon-linux]
+      checks: [packages, file-integrity, config, clamav, yara-x]
+      url: https://deaconguard.io
+  stack:
+    languages: [go, typescript, python, bash]
+    infra: [kubernetes/k3s, aws, github-actions]
+  links:
+    linkedin: https://www.linkedin.com/in/vipinjohnwilson
+status:
+  phase: Running
+  ready: "1/1"  # since 1987
 ```
 
-![Linux](https://img.shields.io/badge/Linux-daily_driver-c9510c?style=flat-square&logo=linux&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-k3s-326ce5?style=flat-square&logo=kubernetes&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00758f?style=flat-square&logo=go&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-2f74c0?style=flat-square&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3572a5?style=flat-square&logo=python&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-2b7a0b?style=flat-square&logo=gnubash&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-b56a00?style=flat-square)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-1f6feb?style=flat-square&logo=githubactions&logoColor=white)
-
-[deaconguard.io](https://deaconguard.io) · [LinkedIn](https://www.linkedin.com/in/vipinjohnwilson)
+**[DeaconGuard](https://github.com/Cloudopsshell/deaconguard)** is a Linux security scanner with a central server and enrollment-token agents. It checks packages against the official Ubuntu, Debian, RHEL and Amazon Linux advisories and covers file integrity, security configuration and malware (ClamAV, plus optional YARA-X rules). [deaconguard.io](https://deaconguard.io)
