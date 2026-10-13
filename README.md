@@ -1,7 +1,7 @@
 `$ kubectl get engineer vipin-john-wilson -o yaml`
 
 ```yaml
-apiVersion: people.cloudopsshell.com/v1
+apiVersion: vjw/v1
 kind: Engineer
 metadata:
   name: vipin-john-wilson
